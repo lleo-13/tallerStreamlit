@@ -10,11 +10,10 @@ st.divider()
 
 st.subheader("CHAD BOT")
 
-text = st.chat_input("Type a message...")
+text = st.text_input("Type a message...")
 
 if st.button("Send"):
     #write your logic here
-    
     response = gptwrapper.gpt_wrapper_message(text)
     st.success("You sent a message!")
     st.write(response)
