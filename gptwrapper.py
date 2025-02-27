@@ -8,7 +8,7 @@ def gpt_wrapper_message(prompt):
     completion = client.chat.completions.create(
         model="gpt-4o",
         messages=[
-            {"role": "developer", "content": "You are a helpful assistant."},
+            {"role": "system", "content": "You are a helpful assistant."},
             {
                 "role": "user",
                 "content": prompt
@@ -16,4 +16,4 @@ def gpt_wrapper_message(prompt):
         ]
     )
 
-    print(completion.choices[0].message)
+    return(completion.choices[0].message["content"])
